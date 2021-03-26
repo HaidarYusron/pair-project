@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Item</title>
+</head>
+<body>
+    <h1>Update Item</h1>
+    <form action="/items/update/<%= id %>" method="POST">
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name" value="<%= item.name %>" ><br>
+        <label for="stock">Stock</label><br>
+        <input type="number" id="stock" name="stock" value="<%= item.stock %>" ><br>
+        <label for="price">Insert Price</label><br>
+        <input type="number" id="price" name="price" value="<%= item.price %>"><br><br>
+        <input type="submit" >
+        >
+    </form>
+    <a href="/items">Back</a>
+
+</body>
+</html>

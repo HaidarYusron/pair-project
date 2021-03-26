@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item List</title>
+    <style>
+        a:link, a:visited {
+          background-color: #2974bb;
+          color: white;
+          padding: 14px 25px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        }
+        
+        a:hover, a:active {
+          background-color: rgb(0, 26, 255);
+        }
+        </style>
+</head>
+<body>
+    <a href="/items/add" target="_blank">Add Item</a>
+    <h1>Item List</h1>
+        <table border style="width: 50%;">
+            <tr>
+                <th>Name</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+            <% items.forEach(el =>{ %>
+            <tr>
+                <td><%= el.name %></td>
+                <td><%= el.stock %></td>
+                <td><%= el.price %></td>
+                <td> 
+                    <a href="/items/update/<%= el.id %>">Update </a>
+                    <a href="/items/delete/<%= el.id %>"onclick="return confirm('Are you sure?')">Delete </a>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+    <a href="/">Home</a>
+</body>
+</html>
